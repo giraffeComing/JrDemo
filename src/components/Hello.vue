@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <v-swiper></v-swiper>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -21,8 +22,12 @@
 </template>
 
 <script>
+  import VSwiper from "./swiper"
 export default {
   name: 'hello',
+    components:{
+        VSwiper
+    },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
