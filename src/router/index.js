@@ -25,6 +25,8 @@ const routes = [
         component: VIndex,
         name: 'VIndex',
         children: [
+            // 子路由的重定位
+            { path: '/', redirect: 'list_demo1' },
             {
                 path: 'list_demo1',
                 component: VListDemo01,
