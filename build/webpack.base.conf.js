@@ -11,6 +11,7 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+    // webpack打包路径配置
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',

@@ -1,8 +1,8 @@
 {
-  "name": "sina finance",
+  "name": "shop_pc",
   "version": "1.0.0",
-  "description": "",
-  "author": "张伟 <1004695936@qq.com>",
+  "description": "shop_pc for MaiYuan",
+  "author": "宁宁 <383514580@qq.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
