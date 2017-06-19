@@ -10,6 +10,16 @@
         components: {},
         data () {
             return {}
+        },
+        mounted() {
+            this.axios.get('http://localhost:8080/static/test.json').then(response => {
+                console.log('success')
+            }, response => {
+                console.log('error')
+            })
+        },
+        methods:{
+
         }
     }
 </script>
