@@ -1,12 +1,12 @@
 <template>
     <div>
-        rate components
+        333
     </div>
 </template>
 
 <script>
     export default {
-        name: 'rate',
+        name: '',
         components: {},
         data () {
             return {}

@@ -1,6 +1,6 @@
 <template>
     <div>
-        detail components
+        222
     </div>
 </template>
 

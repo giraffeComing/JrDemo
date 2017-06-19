@@ -17,7 +17,7 @@
 <style lang="scss" rel="stylesheet/scss">
     .com-footer{
         height: 80px;
-        background: #eee;
+        background: #ccc;
         font-size: 32px;
         line-height: 80px;
         text-align: center;

@@ -17,7 +17,7 @@
 <style lang="scss" rel="stylesheet/scss">
     .com-header{
         height: 80px;
-        background: #ddd;
+        background: #d5d5d5;
         font-size: 32px;
         line-height: 80px;
         text-align: center;
