@@ -6,28 +6,51 @@ import User from '@/components/user'
 import Detail from '@/components/detail'
 import Error from '@/components/404'
 
+//首页
+import VIndex from '../views/index/index'
+
 
 Vue.use(Router)
 
 
 // // 路由配置
 const routes = [
+    //路由的重定向
+    { path: '/', redirect: '/home'},
+    {
+        path: '/home',
+        component: VIndex,
+        name: 'VIndex',
+        children: [
+            // { path: '/', redirect: 'index/index' },
+            {
+                path: 'list1',
+                component: Rate,
+                name: 'Rate'
+            },
+            {
+                path: 'list2',
+                component: User,
+                name: 'User'
+            },
+            // {
+            //     path: 'home/list3',
+            //     component: Detail,
+            //     name: 'Detail'
+            // },
 
-    { path: '/rate', component: Rate, name: 'Rate' },
-    { path: '/user', component: User, name: 'User' },
-    { path: '/detail', component: Detail, name: 'Detail' },
+        ]
 
-];
+    },
+    // { path: '/rate', component: Rate, name: 'Rate' },
+    // { path: '/user', component: User, name: 'User' },
+    // { path: '/detail', component: Detail, name: 'Detail' },
+    { path: '*', component: Error, name: 'Error' },
+]
 
 
 export default new Router({
-  routes: [
-      { path: '/', component: Hello, name: 'Hello'},
-      { path: '/rate', component: Rate, name: 'Rate' },
-      { path: '/user', component: User, name: 'User' },
-      { path: '/detail', component: Detail, name: 'Detail' },
-      { path: '*', component: Error, name: 'Error' },
-  ]
+    routes
 })
 
 
