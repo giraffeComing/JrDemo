@@ -23,7 +23,7 @@
 </template>
 <script>
     import Mock from "mockjs";
-    import VComListBlock from '../listDemo3/commonListBlock';
+    import VComListBlock from '../listDemo03/commonListBlock';
     export default{
         name: 'ComFourLayout',
         components:{

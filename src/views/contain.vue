@@ -3,11 +3,11 @@
         <div class="com-menu">
             <ul>
                 <!--home前面不要忘记'/'-->
+                <li><router-link :to="{ path: '/home/list_demo1' }">进度条和步骤条</router-link></li>
                 <li><router-link :to="{ path: '/home/list_demo3' }">列表</router-link></li>
                 <li><router-link :to="{ path: '/home/list_demo2' }">选项卡</router-link></li>
-                <li><router-link :to="{ path: '/home/list_demo4' }">svg</router-link></li>
-                <li><router-link :to="{ path: '/home/list_demo5' }">echarts</router-link></li>
-                <li><router-link :to="{ path: '/home/list_demo1' }">进度条和步骤条</router-link></li>
+                <li><router-link :to="{ path: '/home/list_demo4' }">echarts</router-link></li>
+                <li><router-link :to="{ path: '/home/list_demo5' }">svg</router-link></li>
             </ul>
         </div>
         <div class="com-view">
