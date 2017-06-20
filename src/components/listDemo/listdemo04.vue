@@ -1,8 +1,8 @@
 <template>
     <div class="view-home">
-        <div style="float: left" v-for="echart in echarts">
-            <e-charts :opts="echart.value" :echartSize="echart.size"></e-charts>
-        </div>
+            <div style="float: left" v-for="echart in echarts">
+                <e-charts :opts="echart.value" :echartSize="echart.size"></e-charts>
+            </div>
     </div>
 </template>
 <script>

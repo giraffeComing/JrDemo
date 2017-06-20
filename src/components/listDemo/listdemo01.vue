@@ -127,13 +127,13 @@
         h4{
             text-align: center;
             font-size: 16px;
-            color: #ccc;
+            color: #aaa;
             line-height: 40px;
         }
         overflow: hidden;
         border: 1px solid #cdcdcd;
         padding: 0 20px 20px 20px;
         border-radius:10px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 </style>

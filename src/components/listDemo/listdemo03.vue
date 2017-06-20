@@ -1,24 +1,26 @@
 <template>
     <div class="com-layout">
-        <div class="com-list-wrap">
-            <div class="com-list-r" :style="activeLayout?currentStyleR:''">
-                <!--改变i的值即可改变布局-->
-                <div class="com-four-col" :style="{height:Math.floor(item.array.length/i)*336+'px'}">
-                    <!--通用产品展示模块-->
-                    <transition-group
-                            name="flip-list"
-                            v-on:before-enter="beforeEnter"
-                            v-on:enter="enter"
-                            v-on:leave="leave"
-                            tag="div">
-                        <v-com-list-block v-for="(list,key) in item.array" :key="key" :idx="key"
-                                          :wid="294"
-                                          :hig="335"
-                                          :opts="list" :pos="{left:key%i*(294+1),top:Math.floor(key/i)*(335+1)}"></v-com-list-block>
-                    </transition-group>
+        <transition appear mode="out-in">
+            <div class="com-list-wrap">
+                <div class="com-list-r" :style="activeLayout?currentStyleR:''">
+                    <!--改变i的值即可改变布局-->
+                    <div class="com-four-col" :style="{height:Math.floor(item.array.length/i)*336+'px'}">
+                        <!--通用产品展示模块-->
+                        <transition-group
+                                name="flip-list"
+                                v-on:before-enter="beforeEnter"
+                                v-on:enter="enter"
+                                v-on:leave="leave"
+                                tag="div">
+                            <v-com-list-block v-for="(list,key) in item.array" :key="key" :idx="key"
+                                              :wid="294"
+                                              :hig="335"
+                                              :opts="list" :pos="{left:key%i*(294+1),top:Math.floor(key/i)*(335+1)}"></v-com-list-block>
+                        </transition-group>
+                    </div>
                 </div>
             </div>
-        </div>
+        </transition>
     </div>
 </template>
 <script>

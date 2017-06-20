@@ -1,6 +1,6 @@
 <template>
     <div class="com-footer">
-        联系我们
+        footer
     </div>
 </template>
 
@@ -15,11 +15,20 @@
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
+    @keyframes bg-color-animation {
+        from{
+            background: #fff;
+        }
+        to{
+            background: #d5d5d5;
+        }
+    }
     .com-footer{
         height: 80px;
-        background: #ccc;
         font-size: 32px;
         line-height: 80px;
         text-align: center;
+        animation: bg-color-animation 7s linear;
+        animation-fill-mode: forwards;
     }
 </style>
