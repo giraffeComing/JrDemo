@@ -75,7 +75,9 @@
         mounted() {
             //监听滚动事件
             window.addEventListener('scroll', this.documentScroll)
+
         },
+
         methods:{
 //            模拟获取瀑布流数据,真实环境下这里的数据应该是ajax获取而来的
             getData:function () {

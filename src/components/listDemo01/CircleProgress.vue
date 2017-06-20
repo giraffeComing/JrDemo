@@ -42,8 +42,17 @@ export default{
     .svg-pos{
         position: relative;
     }
+    @keyframes progressAnimation {
+        from {
+            stroke-dashoffset: 100px;
+        }
+        to {
+            stroke-dashoffset: 0;
+        }}
     circle {
-        transition: stroke-dasharray ease-in-out 1s;
+
+        animation: progressAnimation 600ms linear 1;
+
     }
     .percentColor{
         position: absolute;
