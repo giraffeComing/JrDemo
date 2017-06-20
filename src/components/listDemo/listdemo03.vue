@@ -50,7 +50,7 @@
                 i:4,
 //                模拟数据
                 item:Mock.mock({
-                    "array|8": [
+                    "array|12": [
                         {
                             "sale|0-100": 100,
                             "activeHeart|1-2": true,

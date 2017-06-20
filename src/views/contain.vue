@@ -53,6 +53,7 @@
         }
         .com-view{
             flex: 1;
+            overflow: auto;
         }
     }
 </style>
