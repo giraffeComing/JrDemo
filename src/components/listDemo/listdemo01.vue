@@ -3,7 +3,7 @@
         <transition appear mode="out-in">
             <div>
                 <div class="wrap-border">
-                    <h4>环形进度</h4>
+                    <h4>环形进度条</h4>
                     <!--环形进度条-->
                     <div class="circlefl" v-for="item in circleProgress.array">
                         <v-circle-progress
