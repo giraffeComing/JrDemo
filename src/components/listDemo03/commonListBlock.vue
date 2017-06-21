@@ -33,6 +33,8 @@
 </template>
 <script>
     import Mock from "mockjs";
+    //引入animate.css
+    import animate from "animate.css"
     export default{
         name: 'ComListBlock',
         methods:{
