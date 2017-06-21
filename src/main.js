@@ -5,7 +5,11 @@ import App from './App'
 import router from './router'
 //引入axios
 import axios from 'axios'
+
+//这种形式axios是挂载在Vue的原型下面了，使用的时候前面要加this
 Vue.prototype.axios = axios
+//另一种形式的axios引入,挂载在window全局下面，使用的时候前面不用加this
+// window.aioxs=axios
 
 Vue.config.productionTip = false
 

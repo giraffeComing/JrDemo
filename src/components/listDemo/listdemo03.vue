@@ -3,8 +3,8 @@
         <transition appear mode="out-in">
             <div class="com-list-wrap">
                 <div class="com-list-r" :style="activeLayout?currentStyleR:''">
-                    <!--改变i的值即可改变布局-->
-                    <div class="com-four-col" :style="{height:Math.floor(item.array.length/i)*336+'px'}">
+                    <!--改变i的值即可改变布局,因为是绝对定位了，所以容器的高度要通过js计算出来-->
+                    <div class="com-four-col" :style="{height:Math.floor(len/i)*336+'px'}">
                         <!--通用产品展示模块-->
                         <transition-group
                                 name="flip-list"
@@ -51,56 +51,45 @@
 //                控制列数
                 i:4,
 //                模拟数据
-                item:Mock.mock({
-                    "array|12": [
-                        {
-                            "sale|0-100": 100,
-                            "activeHeart|1-2": true,
-                            "src":Mock.mock("@image('240x240', '#fff')"),
-                            "src2":Mock.mock("@image('240x240', '#eee')"),
-                            "href":"http://www.soufeel.com/",
-                            "name":"Fingers with Hearts",
-                            "sku":"soufeel",
-                            "price|1-100.2": 1,
-                            "priceOld|1-100.2": 1,
-                            "tagType|1-3": 1,
-                            "tags":["Free Shipping","Presale - Ships On 15th"],
-//                            商品数量的字段
-                            "number":0,
-                        }
-                    ]
-                })
+                item:{},
+//                保存数组长度
+                len:0
             }
+        },
+        created(){
+
+            //简单的axios示例，使用时候应封装成function
+            this.axios.get('http://localhost:8080/static/listData.json')
+                .then((response) => {
+
+                    this.item=response.data;
+
+                    this.len=this.item.array.length
+
+                })
+                .catch((error) => {
+
+                });
+
+//            错误的示例
+//            this.axios.get('http://localhost:8080/static/listData.json')
+//                .then(function (response) {
+//                    console.log(response.data)
+//                })
+//                .catch(function (error) {
+//                    console.log(error);
+//                });
+
         },
         mounted() {
             //监听滚动事件
             window.addEventListener('scroll', this.documentScroll)
 
+
         },
 
         methods:{
-//            模拟获取瀑布流数据,真实环境下这里的数据应该是ajax获取而来的
-            getData:function () {
-                let newData=Mock.mock({
-                    "array|8": [
-                        {
-                            "sale|0-100": 100,
-                            "activeHeart|1-2": true,
-                            "src":Mock.mock("@image('240x240', '#fff')"),
-                            "src2":Mock.mock("@image('240x240', '#eee')"),
-                            "href":"http://www.soufeel.com/",
-                            "name":"Fingers with Hearts",
-                            "sku":"soufeel",
-                            "price|1-100.1-6": 1,
-                            "priceOld|1-100.1-6": 1,
-                            "tagType|1-3": 1,
-                            "tags":["Free Shipping","Presale - Ships On 15th"],
-                        }
-                    ]
-                })
-                this.item.array=this.item.array.concat(newData.array)
 
-            },
 //            获取距离页面顶部的距离
             getTop:function(obj) {
                 let iTop = 0;
