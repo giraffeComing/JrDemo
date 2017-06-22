@@ -7,6 +7,7 @@
                 <li><router-link :to="{ path: '/home/list_demo2' }">Tab</router-link></li>
                 <li><router-link :to="{ path: '/home/list_demo3' }">List</router-link></li>
                 <li><router-link :to="{ path: '/home/list_demo4' }">Echarts</router-link></li>
+                <li><router-link :to="{ path: '/home/list_demo5' }">More->ES6</router-link></li>
             </ul>
         </div>
         <div class="com-view">

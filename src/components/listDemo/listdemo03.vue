@@ -69,14 +69,11 @@
         created(){
 
             //简单的axios示例，使用时候应封装成function
+            //            this.axios.get('http://localhost:8080/static/listData.json')
             this.axios.get('http://giraffecoming.github.io/vue/static/listData.json')
-//            this.axios.get('http://localhost:8080/static/listData.json')
                 .then((response) => {
-
                     this.item=response.data;
-
                     this.len=this.item.array.length
-
                 })
                 .catch((error) => {
 
@@ -85,10 +82,10 @@
 //            错误的示例
 //            this.axios.get('http://localhost:8080/static/listData.json')
 //                .then(function (response) {
-//                    console.log(response.data)
+//                    this.item=response.data;
+//                    this.len=this.item.array.length
 //                })
 //                .catch(function (error) {
-//                    console.log(error);
 //                });
 
         },
