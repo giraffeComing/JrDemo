@@ -11,7 +11,9 @@ Vue.prototype.axios = axios
 //另一种形式的axios引入,挂载在window全局下面，使用的时候前面不用加this
 // window.aioxs=axios
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+//这个要放在#app这个Vue实例的前面
+window.bus = new Vue();
 
 /* eslint-disable no-new */
 new Vue({
@@ -20,3 +22,4 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+

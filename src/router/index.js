@@ -10,6 +10,7 @@ import VListDemo03 from '../components/listDemo/listdemo03'
 import VListDemo04 from '../components/listDemo/listdemo04'
 import VListDemo05 from '../components/listDemo/listdemo05'
 import VListDemo06 from '../components/listDemo/listdemo06'
+import VListDemo07 from '../components/listDemo/listdemo07'
 
 //首页
 import VIndex from '../views/index/index'
@@ -25,7 +26,7 @@ const routes = [
     {
         path: '/home',
         component: VIndex,
-        name: 'VIndex',
+        // name: 'VIndex',
         children: [
             // 子路由的重定向
             { path: '/', redirect: 'list_demo1' },
@@ -58,6 +59,11 @@ const routes = [
                 path: 'list_demo6',
                 component: VListDemo06,
                 name: 'VListDemo06'
+            },
+            {
+                path: 'list_demo7',
+                component: VListDemo07,
+                name: 'VListDemo07'
             },
         ]
 
