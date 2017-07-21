@@ -67,13 +67,14 @@
     .del-btn{
         padding: 2px 10px;
         border: none;
-        background: #89d6ab;
+        background: rgba(34, 172, 56,.7);
         font-size: 14px;
         color: #fff;
         cursor: pointer;
         transition: all .5s;
+        border-radius: 4px;
         &:hover{
-            background: #2da060;
+            background: rgba(34, 172, 56,1);
         }
     }
 </style>

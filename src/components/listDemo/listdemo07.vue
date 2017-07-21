@@ -1,13 +1,17 @@
 <template>
-    <div>
-        <!--子组件的自定义事件deleteEvent，演示v-on与$emit-->
-        <v-table :opts="tableData" @deleteEvent="show"></v-table>
-        <!--pre用于演示props被修改-->
-        <!--<pre>-->
+    <div class="listdemo07">
+        <transition appear mode="out-in">
+        <div>
+            <!--子组件的自定义事件deleteEvent，演示v-on与$emit-->
+            <v-table :opts="tableData" @deleteEvent="show"></v-table>
+            <!--pre用于演示props被修改-->
+            <!--<pre>-->
             <!--{{tableData}}-->
-        <!--</pre>-->
-        <transition name="fade">
-            <v-dialog v-show="showDialog" @hiddenMask="hide" @del="deleteData"></v-dialog>
+            <!--</pre>-->
+            <transition name="fade">
+                <v-dialog v-show="showDialog" @hiddenMask="hide" @del="deleteData"></v-dialog>
+            </transition>
+        </div>
         </transition>
     </div>
 </template>
@@ -77,6 +81,13 @@
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
+    .listdemo07{
+        display: flex;
+        justify-content: center;
+        >div{
+            margin-left: -160px;
+        }
+    }
     .fade-enter-active, .fade-leave-active {
         transition: opacity .5s
     }

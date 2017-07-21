@@ -52,7 +52,7 @@
                 aa:'',
 //                mock数据，使用的时候要注意circleProgress.array
                 circleProgress:Mock.mock({
-                    "array|6": [
+                    "array|5": [
                         {
                             "value|0.1": 1,
                             "radius|20-80": 40,

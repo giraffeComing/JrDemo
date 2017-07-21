@@ -10,6 +10,10 @@
                 <li><router-link :to="{ path: '/home/list_demo5' }">More->ES6</router-link></li>
                 <li><router-link :to="{ path: '/home/list_demo6' }">V-model</router-link></li>
                 <li><router-link :to="{ path: '/home/list_demo7' }">props&emit&bus</router-link></li>
+                <li>
+                    <router-link :to="{ path: '/home/list_demo8' }">Array Caveats</router-link>
+                    <span class="issue-point"></span>
+                </li>
             </ul>
         </div>
         <div class="com-view">
@@ -45,6 +49,7 @@
             border-radius:10px;
             width: 160px;
             li{
+                position: relative;
                 list-style: none;
                 line-height: 40px;
             }
@@ -63,5 +68,15 @@
             flex: 1;
             overflow: auto;
         }
+    }
+    .issue-point{
+        position: absolute;
+        right: 2px;
+        top: 15px;
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background: rgba(34, 172, 56,.8);
     }
 </style>

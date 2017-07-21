@@ -1,7 +1,11 @@
 <template>
-    <div class="v-model">
-        <mycounter v-model="num"></mycounter>
-        这是在父组件里的数据：{{num}}
+    <div class="listdemo06">
+        <transition appear mode="out-in">
+        <div class="v-model">
+            <mycounter v-model="num"></mycounter>
+            这是在父组件里的数据：{{num}}
+        </div>
+        </transition>
     </div>
 </template>
 
@@ -21,12 +25,17 @@
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
+    .listdemo06{
+        display: flex;
+        justify-content: center;
+        >div{
+            margin-left: -160px;
+        }
+    }
     .v-model{
-        position: absolute;
-        left: 50%;
-        margin-left: -120px;
         width: 240px;
         padding: 100px;
-        border: 1px solid #ccc;
+        border-radius: 5px;
+        border: 1px solid #cdcdcd;
     }
 </style>
