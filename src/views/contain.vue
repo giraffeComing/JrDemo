@@ -2,17 +2,14 @@
     <div class="com-contain">
         <div class="com-menu">
             <ul>
-                <!--home前面不要忘记'/'-->
-                <li><router-link :to="{ path: '/home/list_demo1' }">Bar</router-link></li>
-                <li><router-link :to="{ path: '/home/list_demo2' }">Tab</router-link></li>
-                <li><router-link :to="{ path: '/home/list_demo3' }">List</router-link></li>
-                <li><router-link :to="{ path: '/home/list_demo4' }">Echarts</router-link></li>
-                <li><router-link :to="{ path: '/home/list_demo5' }">More->ES6</router-link></li>
-                <li><router-link :to="{ path: '/home/list_demo6' }">V-model</router-link></li>
-                <li><router-link :to="{ path: '/home/list_demo7' }">props&emit&bus</router-link></li>
-                <li>
-                    <router-link :to="{ path: '/home/list_demo8' }">Array Caveats</router-link>
-                    <span class="issue-point"></span>
+                <li v-for="(item,index) in listData" @click="showEffect($event,index)">
+                    <router-link :to="{ path: item.path }">
+                        {{item.name}}
+                        <span v-show="item.show" class="issue-point"></span>
+                        <transition name="fade">
+                            <div v-show="index==idx" class="circle"></div>
+                        </transition>
+                    </router-link>
                 </li>
             </ul>
         </div>
@@ -26,8 +23,60 @@
     export default {
         name: 'contain',
         components: {},
+        methods:{
+            showEffect:function(e,i){
+//                150这个数值写的太不灵活了，取的是圆的半径
+                e.target.lastChild.style.left=e.offsetX-150+'px';
+                e.target.lastChild.style.top=e.offsetY-150+'px';
+                this.idx=i;
+            },
+        },
         data () {
-            return {}
+            return {
+                idx:0,
+                listData:[
+                    {
+                        path: '/home/list_demo1',
+                        name: 'Bar',
+                        show: false,
+                    },
+                    {
+                        path: '/home/list_demo2',
+                        name: 'Tab',
+                        show: false,
+                    },
+                    {
+                        path: '/home/list_demo3',
+                        name: 'List',
+                        show: false,
+                    },
+                    {
+                        path: '/home/list_demo4',
+                        name: 'Echarts',
+                        show: false,
+                    },
+                    {
+                        path: '/home/list_demo5',
+                        name: 'More->ES6',
+                        show: false,
+                    },
+                    {
+                        path: '/home/list_demo6',
+                        name: 'V-model',
+                        show: false,
+                    },
+                    {
+                        path: '/home/list_demo7',
+                        name: 'props&emit&bus',
+                        show: false,
+                    },
+                    {
+                        path: '/home/list_demo8',
+                        name: 'Array Caveats',
+                        show: true,
+                    },
+                ]
+            }
         }
     }
 </script>
@@ -52,6 +101,7 @@
                 position: relative;
                 list-style: none;
                 line-height: 40px;
+                overflow: hidden;
             }
             a{
                 text-decoration: none;
@@ -79,4 +129,27 @@
         border-radius: 5px;
         background: rgba(34, 172, 56,.8);
     }
+    //点击圆形实现的样式
+    .fade-enter-active, .fade-leave-active {
+        transition: transform .5s ease-in-out;
+        opacity: 0.4;
+        width: 300px;
+        height: 300px;
+        background: #000;
+        border: 80px solid #444;
+        box-shadow:0 0 0 80px #000;
+        transform: scale(0.4);
+    }
+    .fade-enter, .fade-leave-active {
+        opacity: 0;
+        background: red;
+        transform: scale(0.2);
+    }
+    .circle{
+        position: absolute;
+        border-radius: 200px;
+        box-sizing: border-box;
+        pointer-events: none;
+    }
+
 </style>
