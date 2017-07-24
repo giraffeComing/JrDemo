@@ -4,7 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 // 全局引入字体图标
-import 'font-awesome/css/font-awesome.css'
+// npm安装font-awesome打包时候会出现路径问题
+// import 'font-awesome/css/font-awesome.css'
 //引入axios
 import axios from 'axios'
 
