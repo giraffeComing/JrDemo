@@ -75,6 +75,11 @@
                         name: 'Array Caveats',
                         show: true,
                     },
+                    {
+                        path: '/home/list_demo9',
+                        name: 'Transitions Six',
+                        show: true,
+                    },
                 ]
             }
         }
@@ -142,7 +147,6 @@
     }
     .fade-enter, .fade-leave-active {
         opacity: 0;
-        background: red;
         transform: scale(0.2);
     }
     .circle{
