@@ -1,15 +1,14 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Router)
+Vue.use(Vuex);
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Hello',
-      component: Hello
+import modules_A from './modules_A'
+import modules_B from './modules_B'
+
+export default new Vuex.Store({
+    modules: {
+        modules_A,
+        modules_B
     }
-  ]
-})
+});

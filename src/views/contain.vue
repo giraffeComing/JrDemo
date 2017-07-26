@@ -80,6 +80,11 @@
                         name: 'Transitions Six',
                         show: true,
                     },
+                    {
+                        path: '/home/list_demo10',
+                        name: 'Vuex',
+                        show: false,
+                    },
                 ]
             }
         }

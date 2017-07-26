@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// 定义好store模块之后一定要记得在main.js主入口文件中引入一下！然后在下面的vue实例中注册
+import store from './store/index'
 // 全局引入字体图标
 // npm安装font-awesome打包时候会出现路径问题
 // import 'font-awesome/css/font-awesome.css'
@@ -22,6 +24,7 @@ window.bus = new Vue();
 new Vue({
   el: '#app',
   router,
+  store:store,
   template: '<App/>',
   components: { App }
 })
