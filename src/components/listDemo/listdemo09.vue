@@ -2,7 +2,6 @@
     <div>
         <button @click="showHeart">showbtn</button>
         <button @click="hideHeart">hidebtn</button>
-        {{aa}}
         <transition name="a">
             <div class="shape" v-if="ifShow"></div>
         </transition>
@@ -18,12 +17,6 @@
                 ifShow:false
             }
         },
-        mounted(){
-            this.$store.commit('increment')
-            this.$store.commit('incrementNum')
-            console.log(this.$store.state)
-            console.log(this.$store.getters)
-        },
         methods:{
             showHeart:function () {
                 this.ifShow=true
@@ -32,11 +25,6 @@
                 this.ifShow=false
             }
         },
-        computed:{
-            aa:function () {
-                return this.$store.getters
-            }
-        }
     }
 </script>
 

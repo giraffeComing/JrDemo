@@ -1,38 +1,49 @@
 <template>
-    <div>
-        {{aa}}
+    <div class="vuex-demo">
+        <div>
+            <v-add-list></v-add-list>
+            <v-todo-list></v-todo-list>
+            <div class="code">
+                <pre> {{toDoList}} </pre>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+    import VTodoList from '../listDemo10/todoList'
+    import VAddList from '../listDemo10/addItem'
     export default {
         name: '',
-        components: {},
+        components: {
+            VTodoList,
+            VAddList
+        },
         data () {
             return {}
         },
-        mounted(){
-            this.$store.commit('increment')
-            this.$store.commit('incrementNum')
-            console.log(this.$store.state)
-            console.log(this.$store.getters)
-        },
-        methods:{
-            showHeart:function () {
-                this.ifShow=true
-            },
-            hideHeart:function () {
-                this.ifShow=false
-            }
-        },
         computed:{
-            aa:function () {
-                return this.$store.getters
+            toDoList:function () {
+//                取出state中的数据如果有模块名，记得要点上模块名
+                return this.$store.state.modules_A.todoListData
             }
         }
     }
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
-
+    .vuex-demo{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        >div{
+            width: 600px;
+            margin-left: -160px;
+        }
+        .code{
+            position: fixed;
+            right: 200px;
+            top: 80px;
+        }
+    }
 </style>

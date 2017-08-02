@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+
 import router from './router'
 // 定义好store模块之后一定要记得在main.js主入口文件中引入一下！然后在下面的vue实例中注册
 import store from './store/index'
