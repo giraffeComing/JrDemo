@@ -60,6 +60,7 @@
             position: fixed;
             right: 200px;
             top: 80px;
+            background: #eee;
         }
         .edit-btn{
             float: right;

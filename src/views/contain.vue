@@ -73,17 +73,17 @@
                     {
                         path: '/home/list_demo8',
                         name: 'Array Caveats',
-                        show: true,
+                        show: false,
                     },
                     {
                         path: '/home/list_demo9',
                         name: 'Transitions Six',
-                        show: true,
+                        show: false,
                     },
                     {
                         path: '/home/list_demo10',
                         name: 'Vuex',
-                        show: false,
+                        show: true,
                     },
                 ]
             }
