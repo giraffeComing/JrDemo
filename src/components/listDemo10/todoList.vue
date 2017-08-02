@@ -1,25 +1,25 @@
 <template>
     <div class="todo-list">
         <div class="todo-title">未完成</div>
-        <ul class="todo-ul">
-            <li v-for="list in getToDo">
+        <transition-group name="list" tag="ul" class="todo-ul">
+            <li v-for="list in getToDo" :key="list">
                 {{list.item}}
                 <input type="button" class="btn-done" @click="doneevent(list.id)" value="完成">
                 <input type="button" class="btn-cancel" @click="cancelevent(list.id)" value="取消">
             </li>
-        </ul>
+        </transition-group>
         <div class="todo-title">已完成</div>
-        <ul class="todo-ul">
-            <li v-for="list in getDone">
+        <transition-group name="list" tag="ul" class="todo-ul">
+            <li v-for="list in getDone" :key="list">
                 {{list.item}}
             </li>
-        </ul>
+        </transition-group>
         <div class="todo-title">已取消</div>
-        <ul class="todo-ul">
-            <li v-for="list in getCancel">
+        <transition-group name="list" tag="ul" class="todo-ul">
+            <li v-for="list in getCancel" :key="list">
                 {{list.item}}
             </li>
-        </ul>
+        </transition-group>
     </div>
 </template>
 
@@ -94,5 +94,13 @@
         .btn-cancel{
 
         }
+    }
+    .list-enter-active, .list-leave-active {
+        transition: all ease-in-out .5s;
+    }
+    .list-enter, .list-leave-to
+    {
+        opacity: 0;
+        transform: translateY(30px);
     }
 </style>
