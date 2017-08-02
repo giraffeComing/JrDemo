@@ -31,4 +31,12 @@ export default {
         }
         state.todoListData.unshift(item);
     },
+    [type.DELETEEVENT](state,id){
+        for (let i = 0; i < state.todoListData.length; i++) {
+            if (state.todoListData[i].id === id) {
+                state.todoListData.splice(i, 1);
+                break;
+            }
+        }
+    },
 }

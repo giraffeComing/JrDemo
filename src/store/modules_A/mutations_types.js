@@ -9,3 +9,6 @@ export const DONEEVENT = 'DONEEVENT';
 
 // 取消事件
 export const CANCELEVENT = 'CANCELEVENT';
+
+// 删除事件
+export const DELETEEVENT = 'DELETEEVENT';

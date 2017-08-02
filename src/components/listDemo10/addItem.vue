@@ -52,6 +52,7 @@
             color: #22ac38;
             transition: all ease-in-out .3s;
             cursor: pointer;
+            outline: none;
             &:hover{
                 background: #22ac38;
                 color: #fff;

@@ -11,6 +11,9 @@ export default {
     },
     cancelevent({commit}, id){
         commit('CANCELEVENT', id)
+    },
+    deleteevent({commit},id){
+        commit('DELETEEVENT',id)
     }
 
 
