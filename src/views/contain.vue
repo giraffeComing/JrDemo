@@ -83,8 +83,13 @@
                     {
                         path: '/home/list_demo10',
                         name: 'Vuex',
-                        show: true,
+                        show: false,
                     },
+                    {
+                        path: '/home/list_demo11',
+                        name: 'directive',
+                        show: true,
+                    }
                 ]
             }
         }

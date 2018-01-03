@@ -14,6 +14,7 @@ import VListDemo07 from '../components/listDemo/listdemo07'
 import VListDemo08 from '../components/listDemo/listdemo08'
 import VListDemo09 from '../components/listDemo/listdemo09'
 import VListDemo10 from '../components/listDemo/listdemo10'
+import VListDemo11 from '../components/listDemo/listdemo11'
 
 //首页
 import VIndex from '../views/index/index'
@@ -83,6 +84,11 @@ const routes = [
                 component: VListDemo10,
                 name: 'VListDemo10'
             },
+            {
+                path: 'list_demo11',
+                component: VListDemo11,
+                name: 'VListDemo11'
+            }
         ]
 
     },
